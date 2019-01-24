@@ -1,0 +1,57 @@
+<div class="container">
+  <h1>Inscription</h1>
+  <form>
+    <div class="form-group">
+      <label for="firstName">Prénom: </label>
+      <input type="text" class="form-control" id="firstName"
+             required
+             [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel">
+      <div [hidden]="firstName.valid || firstName.pristine"
+           class="alert alert-danger">
+        Ce champs est requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Nom: </label>
+      <input type="text" class="form-control" id="LastName"
+             required
+             [(ngModel)]="model.lastName" name="LastName" #lastName="ngModel">
+      <div [hidden]="lastName.valid || lastName.pristine"
+           class="alert alert-danger">
+        Ce champs est requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail: </label>
+      <input type="text" class="form-control" id="email"
+             required
+             [(ngModel)]="model.email" name="email" #email="ngModel">
+      <div [hidden]="email.valid || email.pristine"
+           class="alert alert-danger">
+        Ce champs est requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password: </label>
+      <input type="text" class="form-control" id="password"
+             required
+             [(ngModel)]="model.password" name="password" #password="ngModel">
+      <div [hidden]="password.valid || password.pristine"
+           class="alert alert-danger">
+        Ce champs est requis
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="hairColor">Couleur de cheveux</label>
+      <select class="form-control" id="hairColor" required>
+        <option *ngFor="let pow of hairColor" [value]="pow">{{pow}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="newUser()">S'inscrire</button>
+  </form>
+</div>
