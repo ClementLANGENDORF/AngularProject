@@ -6,12 +6,13 @@ import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: 'about', canActivate: [AuthGuard], component: AboutComponent },
+  { path: 'contact', canActivate: [AuthGuard], component: ContactComponent },
   { path: 'subscribe', component: UserFormComponent},
   { path: '', component: HomeComponent },
   { path: 'not-found', component: NotFoundComponent },

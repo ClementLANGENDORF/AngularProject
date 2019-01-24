@@ -14,6 +14,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { UserFormComponent } from './user-form/user-form.component';
 
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-guard.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,10 @@ import { UserFormComponent } from './user-form/user-form.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
