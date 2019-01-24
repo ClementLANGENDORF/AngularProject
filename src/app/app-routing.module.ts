@@ -8,11 +8,12 @@ import { LoginComponent } from './login/login.component';
 import { UserFormComponent } from './user-form/user-form.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent},
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  {path: 'subscribe', component: UserFormComponent},
+  { path: 'subscribe', component: UserFormComponent},
+  { path: '', component: HomeComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];
