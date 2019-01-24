@@ -12,7 +12,6 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
-import { AdduserComponent } from './adduser/adduser.component';
 import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
@@ -24,7 +23,6 @@ import { UserFormComponent } from './user-form/user-form.component';
     HomeComponent,
     NotFoundComponent,
     LoginComponent,
-    AdduserComponent,
     UserFormComponent,
   ],
   imports: [
