@@ -1,33 +1,44 @@
-<h1>Contact</h1>
-
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
-
-  <h5 *ngIf="success">Your form is valid!</h5>
-
-  <label>
-    Name:
-    <input type="text" formControlName="name">
-    <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
-      <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Contact</h1>
     </div>
-  </label>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Votre nom</label>
+          <input class="form-control" type="text" formControlName="name">
+          <div *ngIf="submitted && messageForm.controls.name.errors" class="text-danger">
+            <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
 
-  <label>
-    Message:
-    <textarea formControlName="message"></textarea>
-    <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
-      <div *ngIf="messageForm.controls.message.errors.required">A message is required</div>
+          <label>Votre message</label>
+          <textarea class="form-control" formControlName="message"></textarea>
+          <div *ngIf="submitted && messageForm.controls.message.errors" class="text-danger">
+            <div *ngIf="messageForm.controls.message.errors.required">A message is required</div>
+          </div>
+        </div>
+        <input type="submit" class="btn btn-primary my-3" value="Send message">
+      </form>
     </div>
-  </label>
-
-  <input type="submit" value="Send message" class="cta">
-
-</form>
-
-<div *ngIf="submitted" class="results">
-  <strong>Name:</strong>
-  <span>{{ messageForm.controls.name.value }}</span>
-
-  <strong>Message:</strong>
-  <span>{{ messageForm.controls.message.value }}</span>
+  </div>
+  <div *ngIf="submitted" class="row">
+    <p class="col-12">
+      <strong>Name:</strong><br>
+      {{ messageForm.controls.name.value }}
+    </p>
+    <p class="col-12">
+      <strong>Message:</strong><br>
+      {{ messageForm.controls.message.value }}
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h5 *ngIf="success" class="alert alert-success">Votre message a bien été envoyé</h5>
+    </div>
+  </div>
 </div>
